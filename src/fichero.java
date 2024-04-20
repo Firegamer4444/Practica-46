@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 abstract class fichero {
     String ruta;
@@ -38,7 +39,7 @@ abstract class fichero {
      * @return 
      */
     public String busqueda(String id){
-        String linea = null;
+        String linea = null; 
         try (FileReader fileReader = new FileReader(this.ruta);
         BufferedReader bufferedReader = new BufferedReader(fileReader);){
         while((linea=bufferedReader.readLine()) != null) {
@@ -47,7 +48,6 @@ abstract class fichero {
                 return linea;
             }
         }
-        System.out.print("El dni introducido no existe");
         return linea;
         }
         catch (IOException e) {
@@ -63,11 +63,11 @@ abstract class fichero {
     public void eliminar(String id){
         // se crea un archivo temporal
         File arhchivoOriginal = new File(this.ruta);
-        File archivoTemp = new File("temp.txt");
+        File archivoTemp = new File("ficheros/temp.txt");
         String linea = null;
         try (FileReader fileReader = new FileReader(this.ruta); BufferedReader bufferedReader = new BufferedReader(fileReader); 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("temp.txt"))){
-        // se escribe en el archivo temporal todo el contenido del original menos la linea de la que coincida el dni
+        BufferedWriter writer = new BufferedWriter(new FileWriter("ficheros/temp.txt"))){
+        // se escribe en el archivo temporal todo el contenido del original menos la linea de la que coincida el id
         while((linea=bufferedReader.readLine()) != null) {
             String[] linea_c = linea.split(", ");
             if (!linea_c[0].equals(id)){
@@ -84,7 +84,7 @@ abstract class fichero {
         archivoTemp.renameTo(arhchivoOriginal);
     }
 
-    abstract void pedir_datos();
+    abstract void pedir_datos(Scanner scanner);
 
     abstract void imprimir_datos(String linea);
     

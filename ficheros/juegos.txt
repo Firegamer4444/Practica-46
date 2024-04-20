@@ -1,0 +1,5 @@
+f40bd7d7-de32-47a6-bfdd-b1008cbef56c, Persona 5 royal, [Switch,PC,PS4,PS5,Xbox one], En venta
+808de75c-a0a4-4af8-ae3e-1707ec8092cd, The legend of zelda: Tears of the kingdom, [Switch], En venta
+468c0821-3d26-4d84-a456-371c8bb436c3, Final Fantasy VI, [SNES,GBA], Obsoleto
+607bb141-a6cc-4a9e-ad7b-4896cae28aab, NieR: Automata, [Switch,Xbox one,PS4,PC], En venta
+f7caf759-4586-4458-a368-f0aaeb2cef62, Elden Ring, [PS5,PS4,Xbox one,Xbox series,PC], En venta

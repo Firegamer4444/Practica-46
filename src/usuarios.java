@@ -4,15 +4,15 @@ public class usuarios extends fichero {
 
     public usuarios(){
         super();
-        this.ruta = "usuarios.txt";
+        this.ruta = "ficheros/usuarios.txt";
     }
 
     /**
      * Este metodo pide los datos que se van a introducir en el momento para agregarlos al fichero
+     * @param scanner El scanner que le pasa el menu
      */
-    public void pedir_datos(){
+    public void pedir_datos(Scanner scanner){
         this.datos.clear();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Introduzca el dni: ");
         String dni = scanner.nextLine();
         System.out.println("Introduzca el nombre: ");
@@ -23,7 +23,6 @@ public class usuarios extends fichero {
         String telefono = scanner.nextLine(); 
         System.out.println("Introduzca el correo: ");
         String correo = scanner.nextLine();
-        scanner.close();
         this.datos.add(dni);
         this.datos.add(nombre);
         this.datos.add(apellidos);
